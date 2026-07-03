@@ -82,7 +82,7 @@ const config: Config = {
         "display-2xl": ["var(--font-display)", "sans-serif"],
         "headline-lg": ["var(--font-display)", "sans-serif"],
         "body-md": ["var(--font-sans)", "sans-serif"],
-        "label-sm": ["var(--font-geist-sans)", "sans-serif"],
+        "label-sm": ["var(--font-sans)", "sans-serif"],
       },
       fontSize: {
         "display-2xl-mobile": [

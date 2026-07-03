@@ -1,9 +1,18 @@
+import dynamic from "next/dynamic";
 import TopNavBar from "@/components/TopNavBar";
 import Footer from "@/components/Footer";
-import FeaturesSection from "@/sections/FeaturesSection";
 import HeroSection from "@/sections/HeroSection";
-import NewsletterSection from "@/sections/NewsletterSection";
-import TechSpecsSection from "@/sections/TechSpecsSection";
+import FeaturesSection from "@/sections/FeaturesSection";
+
+const TechSpecsSection = dynamic(
+  () => import("@/sections/TechSpecsSection"),
+  { loading: () => <section id="specs" className="min-h-[400px]" /> }
+);
+
+const NewsletterSection = dynamic(
+  () => import("@/sections/NewsletterSection"),
+  { loading: () => <section id="support" className="min-h-[300px]" /> }
+);
 
 export default function Home() {
   return (

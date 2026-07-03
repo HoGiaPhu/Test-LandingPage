@@ -1,46 +1,68 @@
 import Image from "next/image";
-import { Eye, Hand, LayoutGrid } from "lucide-react";
+import {
+  Eye,
+  Globe,
+  Hand,
+  Images,
+  LayoutGrid,
+  MessageCircle,
+  PlayCircle,
+  AppWindow,
+  type LucideIcon,
+} from "lucide-react";
 
 const EYESIGHT_IMAGE =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuDZQpUpfXAVvmsKxb4lwl4zWfGN2PYJNbEaxks7Lgac_aDbf-_NcMJpAzkeanQRmzrzQ-v1qF59_hp5PbtMUeO8p2Zfq_Y6r8yh2ypgs8Sat8q4pzosN7XEKXzrLsL_1AEjj_Yu-5wmy0J7yoa4rqxhOhPIod71IVDSl2kICu3CRfhAlEUyHqjxJVfUeLBQzMAOk9601DlRUjiB4JloF9gP0XU3XpHgCi0cihQP28sIrgHMaIRAXTIiE4zV7sj8zo4U01H6vqPcs3Y";
 
-const floatingApps = [
+const floatingApps: {
+  id: string;
+  icon: LucideIcon;
+  iconClass: string;
+  className: string;
+  delay: string;
+  duration: string;
+}[] = [
   {
-    icon: "public",
+    id: "public",
+    icon: Globe,
+    iconClass: "h-4 w-4",
     className: "top-[6%] left-[4%] h-9 w-9 opacity-25 animate-float-diagonal",
-    iconSize: "text-lg",
     delay: "0s",
     duration: "22s",
   },
   {
-    icon: "photo_library",
+    id: "photos",
+    icon: Images,
+    iconClass: "h-5 w-5",
     className: "top-[18%] left-[28%] h-11 w-11 opacity-30 animate-float-diagonal-alt",
-    iconSize: "text-xl",
     delay: "4s",
     duration: "26s",
   },
   {
-    icon: "chat",
+    id: "chat",
+    icon: MessageCircle,
+    iconClass: "h-3.5 w-3.5",
     className: "top-[8%] left-[52%] h-8 w-8 opacity-20 animate-float-diagonal",
-    iconSize: "text-base",
     delay: "8s",
     duration: "20s",
   },
   {
-    icon: "play_circle",
+    id: "play",
+    icon: PlayCircle,
+    iconClass: "h-5 w-5",
     className: "top-[22%] left-[68%] h-10 w-10 opacity-35 animate-float-diagonal-alt",
-    iconSize: "text-xl",
     delay: "2s",
     duration: "24s",
   },
   {
-    icon: "window",
+    id: "window",
+    icon: AppWindow,
+    iconClass: "h-4 w-4",
     className: "top-[4%] left-[82%] h-9 w-9 opacity-25 animate-float-diagonal",
-    iconSize: "text-lg",
     delay: "12s",
     duration: "28s",
   },
-] as const;
+];
 
 export default function FeaturesSection() {
   return (
@@ -68,16 +90,14 @@ export default function FeaturesSection() {
           >
             {floatingApps.map((app) => (
               <div
-                key={app.icon}
+                key={app.id}
                 className={`absolute flex items-center justify-center rounded-xl border border-white/10 bg-white/5 text-on-surface backdrop-blur-md ${app.className}`}
                 style={{
                   animationDelay: app.delay,
                   animationDuration: app.duration,
                 }}
               >
-                <span className={`material-symbols-outlined ${app.iconSize}`}>
-                  {app.icon}
-                </span>
+                <app.icon className={app.iconClass} strokeWidth={1.5} />
               </div>
             ))}
           </div>
@@ -120,9 +140,10 @@ export default function FeaturesSection() {
                 className="absolute inset-0 rounded-full border border-white/10 animate-ripple"
                 style={{ animationDelay: "2.6s" }}
               />
-              <span className="material-symbols-outlined relative z-10 text-4xl text-on-surface opacity-40">
-                gesture
-              </span>
+              <Hand
+                className="relative z-10 h-10 w-10 text-on-surface opacity-40"
+                strokeWidth={1.5}
+              />
             </div>
           </div>
 
@@ -155,6 +176,8 @@ export default function FeaturesSection() {
               src={EYESIGHT_IMAGE}
               alt="EyeSight display on Vision Pro"
               fill
+              loading="lazy"
+              quality={75}
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover opacity-60"
             />
