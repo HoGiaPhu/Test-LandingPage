@@ -27,7 +27,7 @@ export default function Footer() {
         </div>
 
         <div className="font-body-md text-label-sm text-on-surface">
-          © 2024 Vision Pro. Thiết kế bởi Tương Lai.
+          © 2024 Vision Pro. Thiết kế bởi Tương Lai
         </div>
       </div>
     </footer>

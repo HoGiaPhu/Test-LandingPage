@@ -1,8 +1,18 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const HERO_IMAGE =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuDaLkQWROzfp7FOtURM30hJp5tECnB5fmqqkavYLk17zgoGjzYFEsUP9WB9TIvX2vq6M7zz-WWGVBmplxVgcVmxJiTl-eCeotV8Q3IxGSiVh7W_7LyRVW_s3sSJ4vvWOoSDz6FbuhNsfoEAgNaDW4iDDwQ5h-dV7HVV-lQBZCEJoZigcN63xWKMj6sbbzijw0IsggQzpD1nf_r4twr_Q6Am7_joG0M7eQxtEgcBrzL3q5CJmd38RzepfkS8gwHp23XCvm2_P0_Vkto";
+
+const fadeUp = {
+  initial: { opacity: 0, y: 30 },
+  animate: { opacity: 1, y: 0 },
+};
+
+const ease = [0.16, 1, 0.3, 1] as const;
 
 export default function HeroSection() {
   return (
@@ -15,23 +25,39 @@ export default function HeroSection() {
       </div>
 
       <div className="z-10 mx-auto flex max-w-4xl flex-col items-center space-y-stack-md text-center">
-        <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 backdrop-blur-md">
+        <motion.div
+          {...fadeUp}
+          transition={{ duration: 0.8, ease }}
+          className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 backdrop-blur-md"
+        >
           <div className="pulse-dot" />
           <span className="font-label-sm text-label-sm uppercase tracking-widest text-on-surface">
             Kỷ nguyên điện toán không gian
           </span>
-        </div>
+        </motion.div>
 
-        <h1 className="font-display-2xl-mobile text-display-2xl-mobile text-gradient md:font-display-2xl md:text-display-2xl">
+        <motion.h1
+          {...fadeUp}
+          transition={{ duration: 0.8, ease, delay: 0.1 }}
+          className="font-display-2xl-mobile text-display-2xl-mobile text-gradient md:font-display-2xl md:text-display-2xl"
+        >
           Chào mừng bạn đến với thực tại mới
-        </h1>
+        </motion.h1>
 
-        <p className="mx-auto max-w-2xl font-body-md text-body-md text-on-surface-variant">
+        <motion.p
+          {...fadeUp}
+          transition={{ duration: 0.8, ease, delay: 0.2 }}
+          className="mx-auto max-w-2xl font-body-md text-body-md text-on-surface-variant"
+        >
           Nơi thế giới kỹ thuật số hòa quyện hoàn hảo vào không gian thực tế của
           bạn. Trải nghiệm sự vô hạn của tầm nhìn.
-        </p>
+        </motion.p>
 
-        <div className="flex flex-col gap-4 pt-8 sm:flex-row">
+        <motion.div
+          {...fadeUp}
+          transition={{ duration: 0.8, ease, delay: 0.3 }}
+          className="flex flex-col gap-4 pt-8 sm:flex-row"
+        >
           <Link
             href="#preorder"
             className="btn-primary px-8 py-4 font-label-sm text-label-sm uppercase tracking-widest"
@@ -44,11 +70,19 @@ export default function HeroSection() {
           >
             Khám phá
           </Link>
-        </div>
+        </motion.div>
       </div>
 
-      <div className="z-10 mx-auto mt-stack-lg w-full max-w-container-max">
-        <div className="glass-panel group relative aspect-video w-full overflow-hidden rounded-2xl md:rounded-3xl">
+      <motion.div
+        {...fadeUp}
+        transition={{ duration: 0.8, ease, delay: 0.4 }}
+        className="z-10 mx-auto mt-stack-lg w-full max-w-container-max"
+      >
+        <motion.div
+          whileHover={{ y: -4, scale: 1.005 }}
+          transition={{ duration: 0.4, ease }}
+          className="glass-panel group relative aspect-video w-full overflow-hidden rounded-2xl md:rounded-3xl"
+        >
           <div className="absolute inset-0 z-10 bg-gradient-to-t from-surface-dim to-transparent" />
           <Image
             src={HERO_IMAGE}
@@ -58,8 +92,8 @@ export default function HeroSection() {
             sizes="(max-width: 1280px) 100vw, 1280px"
             className="object-cover opacity-80 transition-opacity duration-700 group-hover:opacity-100"
           />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

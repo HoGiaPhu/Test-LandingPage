@@ -17,7 +17,12 @@ export default function FeaturesSection() {
       <div className="grid grid-cols-1 gap-stack-md md:grid-cols-12">
         <div className="glass-panel group relative flex min-h-[400px] flex-col justify-end overflow-hidden rounded-2xl p-8 md:col-span-8">
           <div className="absolute inset-0 z-0 bg-surface-container-low/50 transition-colors duration-500 group-hover:bg-surface-container-low/30" />
-          <div className="absolute top-0 right-0 h-64 w-64 translate-x-1/2 -translate-y-1/2 rounded-full bg-galaxy-blue-dim blur-[60px]" />
+          <div className="pointer-events-none absolute -top-12 -right-12 z-0 h-64 w-64 rounded-full bg-galaxy-blue/10 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
+          <LayoutGrid
+            className="pointer-events-none absolute top-0 right-0 z-0 size-[150px] translate-x-1/4 -translate-y-1/4 text-on-surface opacity-5 transition-all duration-500 group-hover:text-galaxy-blue group-hover:opacity-20"
+            strokeWidth={0.75}
+            aria-hidden
+          />
           <div className="z-10">
             <LayoutGrid className="mb-4 h-10 w-10 text-primary" strokeWidth={1.5} />
             <h3 className="mb-2 font-headline-lg-mobile text-headline-lg-mobile text-on-surface">
@@ -32,6 +37,12 @@ export default function FeaturesSection() {
 
         <div className="glass-panel group relative flex min-h-[400px] flex-col justify-end overflow-hidden rounded-2xl p-8 md:col-span-4">
           <div className="absolute inset-0 z-0 bg-surface-container-low/50 transition-colors duration-500 group-hover:bg-surface-container-low/30" />
+          <div className="pointer-events-none absolute -top-12 -right-12 z-0 h-64 w-64 rounded-full bg-galaxy-blue/10 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
+          <Hand
+            className="pointer-events-none absolute top-0 right-0 z-0 size-[150px] translate-x-1/4 -translate-y-1/4 text-on-surface opacity-5 transition-all duration-500 group-hover:text-galaxy-blue group-hover:opacity-20"
+            strokeWidth={0.75}
+            aria-hidden
+          />
           <div className="z-10">
             <Hand className="mb-4 h-10 w-10 text-primary" strokeWidth={1.5} />
             <h3 className="mb-2 font-headline-lg-mobile text-headline-lg-mobile text-on-surface">
