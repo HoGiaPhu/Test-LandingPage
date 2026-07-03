@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import TopNavBar from "@/components/TopNavBar";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 import HeroSection from "@/sections/HeroSection";
 import FeaturesSection from "@/sections/FeaturesSection";
 
@@ -20,9 +21,15 @@ export default function Home() {
       <TopNavBar />
       <main>
         <HeroSection />
-        <FeaturesSection />
-        <TechSpecsSection />
-        <NewsletterSection />
+        <ScrollReveal>
+          <FeaturesSection />
+        </ScrollReveal>
+        <ScrollReveal parallax>
+          <TechSpecsSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <NewsletterSection />
+        </ScrollReveal>
       </main>
       <Footer />
     </>

@@ -194,3 +194,114 @@ body {
   background-size: 48px 48px;
   mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
 }
+
+/* Light theme */
+html:not(.dark) {
+  color-scheme: light;
+}
+
+html:not(.dark) body {
+  background-color: #f5f5f7;
+  color: #1d1d1f;
+}
+
+html:not(.dark) .text-on-surface {
+  color: #1d1d1f;
+}
+
+html:not(.dark) .text-on-surface-variant {
+  color: #1d1d1f;
+}
+
+html:not(.dark) .placeholder\:text-on-surface-variant::placeholder {
+  color: #6e6e73;
+  opacity: 1;
+}
+
+html:not(.dark) .text-on-surface\/80 {
+  color: #1d1d1f;
+}
+
+html:not(.dark) .text-on-surface\/60 {
+  color: rgba(29, 29, 31, 0.72);
+}
+
+html:not(.dark) .text-on-surface\/60:hover,
+html:not(.dark) .hover\:text-on-surface:hover {
+  color: #1d1d1f;
+}
+
+html:not(.dark) h1,
+html:not(.dark) h2,
+html:not(.dark) h3,
+html:not(.dark) h4 {
+  color: #1d1d1f;
+}
+
+html:not(.dark) .text-on-background {
+  color: #1d1d1f;
+}
+
+html:not(.dark) .text-gradient {
+  background-image: linear-gradient(to right, #1d1d1f, #6e6e73);
+}
+
+html:not(.dark) .glass-panel {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+html:not(.dark) .glass-panel .bg-surface-container-low\/50 {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+}
+
+html:not(.dark) .glass-panel .bg-surface-container-low\/30 {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+html:not(.dark) .glass-panel .group-hover\:bg-surface-container-low\/30:hover {
+  background-color: rgba(245, 245, 247, 0.95) !important;
+}
+
+html:not(.dark) .glass-input {
+  background: rgba(0, 0, 0, 0.02);
+  border-bottom-color: rgba(0, 0, 0, 0.15);
+}
+
+html:not(.dark) .btn-secondary {
+  border-color: rgba(0, 0, 0, 0.15);
+  color: #1d1d1f;
+}
+
+html:not(.dark) .btn-secondary:hover {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+html:not(.dark) nav {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06) !important;
+}
+
+html:not(.dark) .bg-surface,
+html:not(.dark) .bg-surface-container,
+html:not(.dark) .bg-surface-container-low,
+html:not(.dark) .bg-surface-container-lowest,
+html:not(.dark) .bg-surface-container-high,
+html:not(.dark) .bg-surface-container-highest {
+  background-color: #ffffff;
+}
+
+html:not(.dark) .border-white\/10 {
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+html:not(.dark) .bg-white\/5 {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+html:not(.dark) .from-surface-dim\/90 {
+  --tw-gradient-from: rgba(245, 245, 247, 0.9);
+}

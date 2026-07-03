@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import BuyNowButton from "@/components/BuyNowButton";
 
 export default function HeroSection() {
   return (
@@ -29,14 +30,10 @@ export default function HeroSection() {
         </p>
 
         <div className="animate-fade-in-up delay-300 flex flex-col gap-4 pt-8 sm:flex-row">
-          <Link
-            href="#preorder"
-            className="btn-primary px-8 py-4 font-label-sm text-label-sm uppercase tracking-widest"
-          >
-            Đặt trước ngay
-          </Link>
+          <BuyNowButton />
           <Link
             href="#features"
+            data-track="hero_explore"
             className="btn-secondary px-8 py-4 font-label-sm text-label-sm uppercase tracking-widest text-on-surface"
           >
             Khám phá
@@ -45,8 +42,8 @@ export default function HeroSection() {
       </div>
 
       <div className="animate-fade-in-up delay-400 z-10 mx-auto mt-stack-lg w-full max-w-container-max">
-        <div className="group relative aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-surface-container-low shadow-[0_24px_64px_-16px_rgba(10,132,255,0.12)] transition-transform duration-500 hover:-translate-y-1 md:rounded-3xl">
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-2/5 bg-gradient-to-t from-surface-dim/90 to-transparent" />
+        <div className="group relative aspect-video w-full overflow-hidden rounded-2xl border border-black/10 bg-white shadow-[0_24px_64px_-16px_rgba(0,0,0,0.08)] transition-transform duration-500 hover:-translate-y-1 dark:border-white/10 dark:bg-surface-container-low dark:shadow-[0_24px_64px_-16px_rgba(10,132,255,0.12)] md:rounded-3xl">
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 hidden h-2/5 bg-gradient-to-t from-surface-dim/90 to-transparent dark:block" />
           <Image
             src="/hero-vision-pro.png"
             alt="Vision Pro Headset"

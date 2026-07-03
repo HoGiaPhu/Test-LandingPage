@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import Providers from "@/components/Providers";
 import "./globals.css";
 
 const inter = Inter({
@@ -15,7 +16,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://vision-pro-landing.netlify.app"),
+  metadataBase: new URL("https://jocular-mandazi-56fe4f.netlify.app"),
   title: "Apple Vision Pro - Kỷ nguyên điện toán không gian",
   description:
     "Trải nghiệm thế giới kỹ thuật số hòa quyện hoàn hảo vào không gian thực tế với Vision Pro.",
@@ -49,19 +50,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi" className="dark scroll-smooth h-full">
+    <html lang="vi" className="dark scroll-smooth h-full" suppressHydrationWarning>
       <head>
-        <link
-          rel="preload"
-          href="/hero-vision-pro.png"
-          as="image"
-          type="image/png"
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');var d=t?t==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.classList.toggle('dark',d);}catch(e){}})();`,
+          }}
         />
       </head>
       <body
-        className={`${inter.variable} ${plusJakartaSans.variable} min-h-full flex flex-col bg-[#090909] text-[#e2e2e2] antialiased selection:bg-galaxy-blue selection:text-white`}
+        className={`${inter.variable} ${plusJakartaSans.variable} min-h-full flex flex-col bg-background text-on-background antialiased selection:bg-galaxy-blue selection:text-white`}
       >
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

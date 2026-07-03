@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { Moon } from "lucide-react";
-import ExperienceButton from "@/components/ExperienceButton";
+import TopNavActions from "@/components/TopNavActions";
 
 const navLinks = [
   { href: "#products", label: "Sản phẩm" },
@@ -29,16 +28,7 @@ export default function TopNavBar() {
           ))}
         </div>
 
-        <div className="flex items-center gap-4">
-          <button
-            type="button"
-            aria-label="Chuyển chế độ giao diện"
-            className="text-on-surface/60 transition-all duration-300 hover:opacity-80"
-          >
-            <Moon className="h-5 w-5" />
-          </button>
-          <ExperienceButton />
-        </div>
+        <TopNavActions />
       </div>
     </nav>
   );

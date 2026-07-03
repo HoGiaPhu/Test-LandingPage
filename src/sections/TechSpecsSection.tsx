@@ -94,7 +94,7 @@ export default function TechSpecsSection() {
       id="specs"
       className="mx-auto max-w-container-max border-t border-white/5 px-margin-mobile py-section-gap md:px-gutter"
     >
-      <h2 className="mb-stack-lg text-center font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg">
+      <h2 className="mb-stack-lg text-center font-headline-lg-mobile text-headline-lg-mobile text-on-surface md:font-headline-lg md:text-headline-lg">
         Công nghệ cốt lõi
       </h2>
 
@@ -169,10 +169,10 @@ export default function TechSpecsSection() {
                 <h3 className="font-display-2xl-mobile text-display-2xl-mobile text-gradient-blue mb-2">
                   {spec.title}
                 </h3>
-                <p className="mb-4 font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">
+                <p className="mb-4 font-label-sm text-label-sm uppercase tracking-widest text-on-surface">
                   {spec.label}
                 </p>
-                <p className="mt-auto font-body-md text-body-md text-on-surface/80">
+                <p className="mt-auto font-body-md text-body-md text-on-surface">
                   {spec.description}
                 </p>
               </motion.div>

@@ -70,7 +70,7 @@ export default function FeaturesSection() {
       id="features"
       className="mx-auto max-w-container-max px-margin-mobile py-section-gap md:px-gutter"
     >
-      <h2 className="mb-stack-lg text-center font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg">
+      <h2 className="mb-stack-lg text-center font-headline-lg-mobile text-headline-lg-mobile text-on-surface md:font-headline-lg md:text-headline-lg">
         Trải nghiệm vượt giới hạn
       </h2>
 
