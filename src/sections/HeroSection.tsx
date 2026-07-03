@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 const HERO_IMAGE =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuDaLkQWROzfp7FOtURM30hJp5tECnB5fmqqkavYLk17zgoGjzYFEsUP9WB9TIvX2vq6M7zz-WWGVBmplxVgcVmxJiTl-eCeotV8Q3IxGSiVh7W_7LyRVW_s3sSJ4vvWOoSDz6FbuhNsfoEAgNaDW4iDDwQ5h-dV7HVV-lQBZCEJoZigcN63xWKMj6sbbzijw0IsggQzpD1nf_r4twr_Q6Am7_joG0M7eQxtEgcBrzL3q5CJmd38RzepfkS8gwHp23XCvm2_P0_Vkto";
+  "https://lh3.googleusercontent.com/aida-public/AB6AXuDaLkQWROzfp7FOtURM30hJp5tECnB5fmqqkavYLk17zgoGjzYFEsUP9WB9TIvX2vq6M7zz-WWGVBmplxVgcVmxJiTl-eCeotV8Q3IxGSiVh7W_7LyRVW_s3sSJ4vvWOoSDz6FbuhNsfoEAgNaDW4iDDwQ5h-dV7HVV-lQBZCEJoZigcN63xWKMj6sbbzijw0IsggQzpD1nf_r4twr_Q6Am7_joG0M7eQxtEgcBrzL3q5CJmd38RzepfkS8gwHp23XCvm2_P0_Vkto=w1920";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -81,16 +81,17 @@ export default function HeroSection() {
         <motion.div
           whileHover={{ y: -4, scale: 1.005 }}
           transition={{ duration: 0.4, ease }}
-          className="glass-panel group relative aspect-video w-full overflow-hidden rounded-2xl md:rounded-3xl"
+          className="group relative aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-surface-container-low shadow-[0_24px_64px_-16px_rgba(10,132,255,0.12)] md:rounded-3xl"
         >
-          <div className="absolute inset-0 z-10 bg-gradient-to-t from-surface-dim to-transparent" />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-2/5 bg-gradient-to-t from-surface-dim/90 to-transparent" />
           <Image
             src={HERO_IMAGE}
             alt="Vision Pro Headset"
             fill
             priority
-            sizes="(max-width: 1280px) 100vw, 1280px"
-            className="object-cover opacity-80 transition-opacity duration-700 group-hover:opacity-100"
+            quality={95}
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1280px"
+            className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]"
           />
         </motion.div>
       </motion.div>

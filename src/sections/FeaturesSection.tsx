@@ -4,6 +4,44 @@ import { Eye, Hand, LayoutGrid } from "lucide-react";
 const EYESIGHT_IMAGE =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuDZQpUpfXAVvmsKxb4lwl4zWfGN2PYJNbEaxks7Lgac_aDbf-_NcMJpAzkeanQRmzrzQ-v1qF59_hp5PbtMUeO8p2Zfq_Y6r8yh2ypgs8Sat8q4pzosN7XEKXzrLsL_1AEjj_Yu-5wmy0J7yoa4rqxhOhPIod71IVDSl2kICu3CRfhAlEUyHqjxJVfUeLBQzMAOk9601DlRUjiB4JloF9gP0XU3XpHgCi0cihQP28sIrgHMaIRAXTIiE4zV7sj8zo4U01H6vqPcs3Y";
 
+const floatingApps = [
+  {
+    icon: "public",
+    className: "top-[6%] left-[4%] h-9 w-9 opacity-25 animate-float-diagonal",
+    iconSize: "text-lg",
+    delay: "0s",
+    duration: "22s",
+  },
+  {
+    icon: "photo_library",
+    className: "top-[18%] left-[28%] h-11 w-11 opacity-30 animate-float-diagonal-alt",
+    iconSize: "text-xl",
+    delay: "4s",
+    duration: "26s",
+  },
+  {
+    icon: "chat",
+    className: "top-[8%] left-[52%] h-8 w-8 opacity-20 animate-float-diagonal",
+    iconSize: "text-base",
+    delay: "8s",
+    duration: "20s",
+  },
+  {
+    icon: "play_circle",
+    className: "top-[22%] left-[68%] h-10 w-10 opacity-35 animate-float-diagonal-alt",
+    iconSize: "text-xl",
+    delay: "2s",
+    duration: "24s",
+  },
+  {
+    icon: "window",
+    className: "top-[4%] left-[82%] h-9 w-9 opacity-25 animate-float-diagonal",
+    iconSize: "text-lg",
+    delay: "12s",
+    duration: "28s",
+  },
+] as const;
+
 export default function FeaturesSection() {
   return (
     <section
@@ -23,7 +61,28 @@ export default function FeaturesSection() {
             strokeWidth={0.75}
             aria-hidden
           />
-          <div className="z-10">
+
+          <div
+            className="pointer-events-none absolute inset-0 z-[1] overflow-hidden"
+            aria-hidden
+          >
+            {floatingApps.map((app) => (
+              <div
+                key={app.icon}
+                className={`absolute flex items-center justify-center rounded-xl border border-white/10 bg-white/5 text-on-surface backdrop-blur-md ${app.className}`}
+                style={{
+                  animationDelay: app.delay,
+                  animationDuration: app.duration,
+                }}
+              >
+                <span className={`material-symbols-outlined ${app.iconSize}`}>
+                  {app.icon}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <div className="relative z-10">
             <LayoutGrid className="mb-4 h-10 w-10 text-primary" strokeWidth={1.5} />
             <h3 className="mb-2 font-headline-lg-mobile text-headline-lg-mobile text-on-surface">
               Không gian không giới hạn
@@ -43,7 +102,31 @@ export default function FeaturesSection() {
             strokeWidth={0.75}
             aria-hidden
           />
-          <div className="z-10">
+
+          <div
+            className="pointer-events-none absolute top-10 left-1/2 z-[1] -translate-x-1/2 opacity-30"
+            aria-hidden
+          >
+            <div className="relative flex h-28 w-28 items-center justify-center">
+              <div
+                className="absolute inset-0 rounded-full border border-white/10 animate-ripple"
+                style={{ animationDelay: "0s" }}
+              />
+              <div
+                className="absolute inset-0 rounded-full border border-white/10 animate-ripple"
+                style={{ animationDelay: "1.3s" }}
+              />
+              <div
+                className="absolute inset-0 rounded-full border border-white/10 animate-ripple"
+                style={{ animationDelay: "2.6s" }}
+              />
+              <span className="material-symbols-outlined relative z-10 text-4xl text-on-surface opacity-40">
+                gesture
+              </span>
+            </div>
+          </div>
+
+          <div className="relative z-10">
             <Hand className="mb-4 h-10 w-10 text-primary" strokeWidth={1.5} />
             <h3 className="mb-2 font-headline-lg-mobile text-headline-lg-mobile text-on-surface">
               Điều khiển tự nhiên

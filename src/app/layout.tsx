@@ -30,6 +30,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi" className="dark scroll-smooth h-full">
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,200,0,0&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body
         className={`${inter.variable} ${plusJakartaSans.variable} ${geistSans.variable} min-h-full flex flex-col bg-[#090909] text-[#e2e2e2] antialiased selection:bg-galaxy-blue selection:text-white`}
       >

@@ -46,7 +46,7 @@ export default function TopNavBar() {
             <button
               type="button"
               onClick={() => setSimulatorOpen(true)}
-              className="hidden font-label-sm text-label-sm uppercase tracking-widest text-primary transition-all duration-300 hover:opacity-80 md:block"
+              className="font-label-sm text-label-sm uppercase tracking-widest text-primary transition-all duration-300 hover:opacity-80"
             >
               Trải nghiệm
             </button>
