@@ -2,6 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import BuyNowButton from "@/components/BuyNowButton";
 
+const HERO_IMAGE =
+  "https://lh3.googleusercontent.com/aida-public/AB6AXuDaLkQWROzfp7FOtURM30hJp5tECnB5fmqqkavYLk17zgoGjzYFEsUP9WB9TIvX2vq6M7zz-WWGVBmplxVgcVmxJiTl-eCeotV8Q3IxGSiVh7W_7LyRVW_s3sSJ4vvWOoSDz6FbuhNsfoEAgNaDW4iDDwQ5h-dV7HVV-lQBZCEJoZigcN63xWKMj6sbbzijw0IsggQzpD1nf_r4twr_Q6Am7_joG0M7eQxtEgcBrzL3q5CJmd38RzepfkS8gwHp23XCvm2_P0_Vkto=w1920";
+
 export default function HeroSection() {
   return (
     <section
@@ -45,7 +48,7 @@ export default function HeroSection() {
         <div className="group relative aspect-video w-full overflow-hidden rounded-2xl border border-black/10 bg-white shadow-[0_24px_64px_-16px_rgba(0,0,0,0.08)] transition-transform duration-500 hover:-translate-y-1 dark:border-white/10 dark:bg-surface-container-low dark:shadow-[0_24px_64px_-16px_rgba(10,132,255,0.12)] md:rounded-3xl">
           <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 hidden h-2/5 bg-gradient-to-t from-surface-dim/90 to-transparent dark:block" />
           <Image
-            src="/hero-vision-pro.png"
+            src={HERO_IMAGE}
             alt="Vision Pro Headset"
             fill
             priority

@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Apple Vision Pro — Landing Page
 
-## Getting Started
+Landing page giới thiệu sản phẩm **Apple Vision Pro**, xây dựng theo phong cách tối giản, hiện đại, lấy cảm hứng từ ngôn ngữ thiết kế của Apple. Trang web mô phỏng trải nghiệm điện toán không gian (spatial computing) với giao diện glassmorphism, hiệu ứng chuyển động mượt và nội dung tiếng Việt.
 
-First, run the development server:
+## Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Live:** [https://jocular-mandazi-56fe4f.netlify.app](https://jocular-mandazi-56fe4f.netlify.app)
+- **Repository:** [https://github.com/HoGiaPhu/Test-LandingPage](https://github.com/HoGiaPhu/Test-LandingPage)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tính năng chính
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Hero** — Tiêu đề, mô tả sản phẩm, CTA và ảnh Vision Pro
+- **Tính năng nổi bật** — Bento grid với hiệu ứng floating apps, sensor ripples
+- **Công nghệ cốt lõi** — 4 thẻ thông số kỹ thuật, quét laser và skeleton loading
+- **Newsletter** — Form đăng ký nhận tin với xác thực email
+- **Chế độ sáng / tối** — Chuyển theme, lưu preference trên trình duyệt
+- **Trợ lý Vision** — Chatbot AI (Groq) trả lời câu hỏi về sản phẩm
+- **Giỏ hàng mini** — Thêm sản phẩm, xem giỏ hàng, lưu lịch sử xem gần đây
+- **Analytics** — Theo dõi scroll depth và tương tác người dùng
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Công nghệ
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Next.js 16](https://nextjs.org/) (App Router)
+- [React 19](https://react.dev/)
+- [Tailwind CSS v4](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [Lucide React](https://lucide.dev/) — icon
